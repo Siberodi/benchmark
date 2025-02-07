@@ -1,4 +1,4 @@
-in/bash
+#!/bin/bash
 set -e
 
 SOLUTIONS_DIR="/app/soluciones"
@@ -14,11 +14,11 @@ for lang in "${LANGUAGES[@]}"; do
     docker build -t "benchmark-$lang" .
 
     # Ejecutar el contenedor y medir el tiempo
-    #TIME_START=$(date +%s.%N) 
+    TIME_START=$(date +%s.%N) 
     docker run --name "benchmark-$lang" "benchmark-$lang"
-    #TIME_END=$(date +%s.%N) 
+    TIME_END=$(date +%s.%N) 
     # Use bc to calculate precise difference
-    #TIME_MS=$(echo "scale=3; ($TIME_END - $TIME_START) * 1000" | bc)
+    TIME_MS=$(echo "scale=3; ($TIME_END - $TIME_START) * 1000" | bc)
 
     # TIME_START=$(date +%s%3N)
     # docker run --name "benchmark-$lang" "benchmark-$lang"
@@ -29,27 +29,22 @@ for lang in "${LANGUAGES[@]}"; do
     docker cp "benchmark-$lang:/app/output.txt" ./output.txt
     docker rm "benchmark-$lang"
 
-    #echo "  - Lenguaje   : $lang"
-    #echo "  - Tiempo (ms): $TIME_MS"
+    echo "  - Lenguaje   : $lang"
+    echo "  - Tiempo (ms): $TIME_MS"
 
     #Agregar verificación de errores
-    if [ -f output.txt ]; then
-      RESULT=$(sed -n '1p' output.txt)  # Extract only the first line
-      if [ -z "$RESULT" ]; then
-        RESULT="No disponible"
-      fi
-    else
-      RESULT="Archivo no encontrado"
+    RESULT=$(cat output.txt) #Leer el archivo output.txt de cada lenguaje
+    if [ -z "$RESULT" ]; then
+      RESULT="No se encontró el archivo output.txt"
     fi
 
-    # Obtener la SEGUNDA línea para la tabla
     if [ -f output.txt ]; then
-      TIME_RESULT=$(sed -n '2p' output.txt)  # Extract second line
+      TIME_RESULT=$(sed -n '2p' output.txt)  # Extraer segunda línea
       if [ -z "$TIME_RESULT" ]; then
         TIME_RESULT="No disponible"
       fi
 
-      # Eliminar la segunda línea después de obtenerla
+      # Eliminar la segunda línea del archivo output.txt
       sed -i '2d' output.txt
     else
       TIME_RESULT="Archivo no encontrado"
@@ -69,6 +64,21 @@ for lang in "${LANGUAGES[@]}"; do
   fi
 done
 
+#Save the results in the output.txt file
+#output_file="/app/output/output.txt"
+
+#echo "---------------------------------" > "$output_file"
+#echo "| Lenguaje   | Tiempo (ms)      |" >> "$output_file"
+#echo "---------------------------------" >> "$output_file"
+#for result in "${results[@]}"; do
+  #lang=$(echo $result | awk '{print $1}')
+  #time=$(echo $result | awk '{print $2}')
+  #printf "| %-10s | %-15s |\n" "$lang" "$time" >> "$output_file"
+#done
+#echo "---------------------------------" >> "$output_file"
+
+
+# Mostrar los resultados en la consola en formato de tabla
 echo "---------------------------------"
 echo "| Lenguaje   | Tiempo (ms)      |"
 echo "---------------------------------"
