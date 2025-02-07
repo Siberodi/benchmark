@@ -34,7 +34,7 @@ console.log(`Tiempo transcurrido: ${tiempoTranscurrido} ms`);
 
 // Preparamos el contenido del archivo
 const contenidoArchivo = 
-`${resultado.toString()} 
+`${resultado.toString()}
 ${tiempoTranscurrido} ms`;
 
 // Escribimos el contenido en un archivo .txt
