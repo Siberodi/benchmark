@@ -29,8 +29,8 @@ for lang in "${LANGUAGES[@]}"; do
     docker cp "benchmark-$lang:/app/output.txt" ./output.txt
     docker rm "benchmark-$lang"
 
-    echo "  - Lenguaje   : $lang"
-    echo "  - Tiempo (ms): $TIME_MS"
+    #echo "  - Lenguaje   : $lang"
+    #echo "  - Tiempo (ms): $TIME_MS"
 
     #Agregar verificación de errores
     RESULT=$(cat output.txt) #Leer el archivo output.txt de cada lenguaje
