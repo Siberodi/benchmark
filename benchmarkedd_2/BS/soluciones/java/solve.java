@@ -33,7 +33,7 @@ public class solve {
         // Escribimos los resultados en un archivo de texto
         try (FileWriter writer = new FileWriter("output.txt")) {
             writer.write(resultado + "\n");
-            writer.write(tiempoEjecucion);
+            writer.write(tiempoEjecucion + "\n");
         } catch (IOException e) {
             System.err.println("Error al escribir en el archivo: " + e.getMessage());
         }
