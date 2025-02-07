@@ -51,7 +51,7 @@ func main() {
         log.Fatalf("Error escribiendo en el archivo: %v", err)
     }
 
-    _, err = fmt.Fprintf(file, "Tiempo transcurrido: %d ms\n", duracion)
+    _, err = fmt.Fprintf(file, duracion)
     if err != nil {
         log.Fatalf("Error escribiendo en el archivo: %v", err)
     }
