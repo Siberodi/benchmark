@@ -31,4 +31,4 @@ print(f"Tiempo de ejecución: {tiempo_ms:.2f} ms")
 # Guardamos el resultado y el tiempo en un archivo .txt
 with open("output.txt", "w") as archivo:
     archivo.write(f"{resultado}\n")
-    archivo.write(f"Tiempo de ejecución: {tiempo_ms:.2f} ms\n")
+    archivo.write(f"{tiempo_ms:.2f}")
