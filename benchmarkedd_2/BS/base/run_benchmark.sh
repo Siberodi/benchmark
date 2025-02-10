@@ -65,17 +65,17 @@ for lang in "${LANGUAGES[@]}"; do
 done
 
 #Save the results in the output.txt file
-#output_file="/app/output/output.txt"
+output_file="/app/output/output.txt"
 
-#echo "---------------------------------" > "$output_file"
-#echo "| Lenguaje   | Tiempo (ms)      |" >> "$output_file"
-#echo "---------------------------------" >> "$output_file"
-#for result in "${results[@]}"; do
-  #lang=$(echo $result | awk '{print $1}')
-  #time=$(echo $result | awk '{print $2}')
-  #printf "| %-10s | %-15s |\n" "$lang" "$time" >> "$output_file"
-#done
-#echo "---------------------------------" >> "$output_file"
+echo "---------------------------------" > "$output_file"
+echo "| Lenguaje   | Tiempo (ms)      |" >> "$output_file"
+echo "---------------------------------" >> "$output_file"
+for result in "${results[@]}"; do
+  lang=$(echo $result | awk '{print $1}')
+  time=$(echo $result | awk '{print $2}')
+  printf "| %-10s | %-15s |\n" "$lang" "$time" >> "$output_file"
+done
+echo "---------------------------------" >> "$output_file"
 
 
 # Mostrar los resultados en la consola en formato de tabla
