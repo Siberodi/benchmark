@@ -81,6 +81,8 @@ Este comando mostrará el archivo `output.txt`, que contiene el tiempo de ejecuc
 - Alejandro Fontalvo Gomez
 - Sibeli I. Rodrgiuez Diaz
 - Juan S. Morales Rincon
+
+
 Estructura del computador II
 Ingenieria de Sistemas y Computacion
 Universidad del Norte
