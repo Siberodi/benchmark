@@ -77,5 +77,14 @@ Este comando mostrará el archivo `output.txt`, que contiene el tiempo de ejecuc
 - Si un lenguaje no muestra su tiempo correctamente, revisa los archivos de salida (`output.txt`) y verifica los logs de ejecución.
 - Puedes modificar los programas en los distintos lenguajes para optimizar su rendimiento y comparar nuevas implementaciones.
 
+## Estudiantes: 
+- Alejandro Fontalvo Gomez
+- Sibeli I. Rodrgiuez Diaz
+- Juan S. Morales Rincon
+Estructura del computador II
+Ingenieria de Sistemas y Computacion
+Universidad del Norte
+Febrero - 2025
+
 
 
