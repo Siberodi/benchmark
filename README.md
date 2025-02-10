@@ -80,7 +80,6 @@ Este comando mostrará el archivo `output.txt`, que contiene el tiempo de ejecuc
 ## Estudiantes: 
 - Alejandro Fontalvo Gomez
 - Sibeli I. Rodrgiuez Diaz
-- Juan S. Morales Rincon
 
 
 Estructura del computador II
