@@ -84,8 +84,14 @@ Este comando mostrará el archivo `output.txt`, que contiene el tiempo de ejecuc
 
 
 Estructura del computador II
+
+
 Ingenieria de Sistemas y Computacion
+
+
 Universidad del Norte
+
+
 Febrero - 2025
 
 
